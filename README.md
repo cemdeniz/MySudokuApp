@@ -8,13 +8,13 @@ Its a simple and fun sudoku android application that generates a random solveabl
 
 #Diffuculties
 
-  -Beginner
+   -Beginner
  
-  -Intermediate
+   -Intermediate
  
-  -Advanced
-  
-  -Expert
+   -Advanced
+   
+   -Expert
   
   -World's Hardest Sudoku
   
