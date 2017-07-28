@@ -4,20 +4,26 @@
 
 -----------------
 
-its a simple and fun sudoku android application that generates a random solveable sudoku with chosen diffuclty and makes editable board to solve the sudoku.
+Its a simple and fun sudoku android application that generates a random solveable sudoku with chosen diffuclty and makes editable board to solve the sudoku.
 
 #Diffuculties
+
   -Beginner
+ 
   -Intermediate
+ 
   -Advanced
+  
   -Expert
+  
   -World's Hardest Sudoku
   
-[In 2012, Finnish mathematician Arto Inkala claimed to have created the 'World's Hardest Sudoku' so i want to share it with everyone.]
+[In 2012, Finnish mathematician Arto Inkala claimed to have created the 'World's Hardest Sudoku' and i wanted to share it with everyone.]
 
 #Tools
 
  -SudokuAdapter
+ 
  -SudokuGenerator
 
 #Sodoku solving algorithm
