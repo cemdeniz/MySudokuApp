@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e2d6d6"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/hardestView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="In 2012, Finnish mathematician Arto Inkala claimed to have created the 'World's Hardest Sudoku'.\n\nIf you want to give it a try, do your best.  :)"
+        android:textSize="14dp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/hardestViewHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="★ World's Hardest Sudoku ★"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <GridView
+        android:id="@+id/hardestGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grid_row_border"
+        android:gravity="center"
+        android:horizontalSpacing="3dp"
+        android:numColumns="9"
+        android:padding="5dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+    <Button
+        android:id="@+id/hardestChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:text="Check"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:background="@android:color/transparent" />
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:text="Show Complete"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:background="@android:color/transparent" />
+
+        </LinearLayout>
+
+
+</LinearLayout>

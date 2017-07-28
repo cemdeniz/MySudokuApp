@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e2d6d6"
+    tools:context="com.example.cemdeniz.sudokuapp.SudokuMain.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/difficultyView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Choose Diffuculty"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="22sp"
+            android:textStyle="bold|italic"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="7dp" />
+
+        <Button
+            android:id="@+id/BeginnerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_blue"
+            android:text="․ BEGINNER ․"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/IntermediateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:text="‥ INTERMEDIATE ‥"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/AdvancedBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:text="∴ ADVANCED ∴"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/ExpertBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:text="∷  EXPERT  ∷"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/hardestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:text="☆ World's Hardest Sudoku ☆"
+            android:textAlignment="center" />
+
+
+        <LinearLayout
+            android:layout_width="368dp"
+            android:layout_height="495dp"
+            android:orientation="vertical"
+            android:padding="15dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="What is Sudoku ?"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="22sp"
+                android:textStyle="bold|italic" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/howToBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="How To Play"
+                    android:background="@android:color/transparent"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/historyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="About Sudoku"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/aboutSudokuView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sudoku_board"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="#e2d6d6">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/sudokuView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+        <GridView
+            android:id="@+id/SudokuGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grid_row_border"
+            android:gravity="center"
+            android:horizontalSpacing="3dp"
+            android:numColumns="9"
+            android:padding="5dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="3dp" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:text="** You can only enter numbers between '1-9' !"
+            android:padding="5dp"
+            android:textSize="12dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/checker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Check"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:background="@android:color/transparent"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/doneBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Show Complete"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:background="@android:color/transparent"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

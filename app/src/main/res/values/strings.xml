@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <color name="light_blue">#92cbd2</color>
+    <color name="dark_blue">#4fbdd1</color>
+    <color name="green">#7ad25b</color>
+    <color name="orange">#ce8b51</color>
+    <color name="red">#e95053</color>
+    <color name="check">#1e7dd1</color>
+    <color name="complete">#8e3c70</color>
+</resources>
+
