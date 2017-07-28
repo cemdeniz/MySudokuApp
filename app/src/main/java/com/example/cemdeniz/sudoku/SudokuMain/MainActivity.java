@@ -1,4 +1,4 @@
-package com.example.cemdeniz.sudokuapp.SudokuMain;
+package com.example.cemdeniz.sudoku.SudokuMain;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.cemdeniz.sudokuapp.R;
-import com.example.cemdeniz.sudokuapp.SudokuDifficulties.AdvancedSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuDifficulties.BeginnerSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuDifficulties.ExpertSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuDifficulties.HardestSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuDifficulties.IntermediateSudoku;
+import com.example.cemdeniz.sudoku.R;
+import com.example.cemdeniz.sudoku.SudokuDifficulties.AdvancedSudoku;
+import com.example.cemdeniz.sudoku.SudokuDifficulties.BeginnerSudoku;
+import com.example.cemdeniz.sudoku.SudokuDifficulties.ExpertSudoku;
+import com.example.cemdeniz.sudoku.SudokuDifficulties.HardestSudoku;
+import com.example.cemdeniz.sudoku.SudokuDifficulties.IntermediateSudoku;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -21,39 +21,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("✯ Sudoku");
 
-        final Button beginnerBtn = (Button) findViewById(R.id.BeginnerBtn);
+        final Button beginnerBtn     = (Button) findViewById(R.id.BeginnerBtn);
         final Button intermediateBtn = (Button) findViewById(R.id.IntermediateBtn);
-        final Button advancedBtn = (Button) findViewById(R.id.AdvancedBtn);
-        final Button expertBtn = (Button) findViewById(R.id.ExpertBtn);
-        final Button hardestBtn = (Button) findViewById(R.id.hardestBtn);
-        final Button howToBtn = (Button) findViewById(R.id.howToBtn);
-        final Button historyBtn = (Button) findViewById(R.id.historyBtn);
+        final Button advancedBtn     = (Button) findViewById(R.id.AdvancedBtn);
+        final Button expertBtn       = (Button) findViewById(R.id.ExpertBtn);
+        final Button hardestBtn      = (Button) findViewById(R.id.hardestBtn);
+        final Button howToBtn        = (Button) findViewById(R.id.howToBtn);
+        final Button historyBtn      = (Button) findViewById(R.id.historyBtn);
 
         beginnerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i=new Intent(MainActivity.this, BeginnerSudoku.class );
                 startActivity(i);
-
             }
         });
 
 
        intermediateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 Intent i=new Intent(MainActivity.this, IntermediateSudoku.class );
                 startActivity(i);
-
-
             }
         });
 
 
         advancedBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 Intent i=new Intent(MainActivity.this, AdvancedSudoku.class );
                 startActivity(i);
             }
@@ -62,10 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         expertBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 Intent i=new Intent(MainActivity.this, ExpertSudoku.class );
                 startActivity(i);
-
             }
         });
 
@@ -92,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 TextView tx = (TextView) findViewById(R.id.aboutSudokuView);
                 tx.setText(null);
                 tx.setTextSize(16);
@@ -100,14 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
     }
-
 }
 

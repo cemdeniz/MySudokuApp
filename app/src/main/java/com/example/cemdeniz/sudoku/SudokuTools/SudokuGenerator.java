@@ -1,4 +1,4 @@
-package com.example.cemdeniz.sudokuapp.SudokuTools;
+package com.example.cemdeniz.sudoku.SudokuTools;
 
 /**
  * Created by cemdeniz on 17.07.2017.
@@ -15,11 +15,10 @@ import java.util.Random;
 public class SudokuGenerator {
 
 
-    public static final int BOARD_WIDTH = 9;
-    public static final int BOARD_HEIGHT = 9;
+    public static final int     BOARD_WIDTH = 9;
+    public static final int     BOARD_HEIGHT = 9;
     int [][] complete = new int[BOARD_WIDTH][BOARD_HEIGHT];
     public ArrayList<Integer> completeArrayList = new ArrayList<>();
-
     /**
      * Constructor.  Resets board to zeros
      */
@@ -38,7 +37,6 @@ public class SudokuGenerator {
         nextCell(0, 0);
         makeHoles(difficulty);
         return board;
-
     }
 
     /**
@@ -54,9 +52,9 @@ public class SudokuGenerator {
         int nextY = y;
         int[] toCheck = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         Random r = new Random();
-        int tmp = 0;
+        int tmp     = 0;
         int current = 0;
-        int top = toCheck.length;
+        int top     = toCheck.length;
 
         for (int i = top - 1; i > 0; i--) {
             current = r.nextInt(i);
@@ -64,7 +62,6 @@ public class SudokuGenerator {
             toCheck[current] = toCheck[i];
             toCheck[i] = tmp;
         }
-
         for (int i = 0; i < toCheck.length; i++) {
             if (legalMove(x, y, toCheck[i])) {
                 board[x][y] = toCheck[i];
@@ -85,7 +82,6 @@ public class SudokuGenerator {
         board[x][y] = 0;
         return false;
     }
-
     /**
      * Given a cell's coordinates and a possible number for that cell,
      * determine if that number can be inserted into said cell legally.
@@ -122,8 +118,6 @@ public class SudokuGenerator {
                     return false;
         return true;
     }
-
-
     /**
      * Given a completed board, replace a given amount of cells with 0s
      * (to represent blanks)
@@ -131,7 +125,6 @@ public class SudokuGenerator {
      * @param holesToMake How many 0s to put in the board.
      */
     public void makeHoles(int holesToMake) {
-
         /* We define difficulty as follows:
             Easy: 32+ clues (49 or fewer holes)
 			Medium: 27-31 clues (50-54 holes)
@@ -140,8 +133,6 @@ public class SudokuGenerator {
 		*/
         double remainingSquares = 81;
         double remainingHoles = (double) holesToMake;
-        //String space = " ";
-
 
         for (int i = 0; i < 9; i++)
             for (int j = 0; j < 9; j++) {
@@ -152,10 +143,8 @@ public class SudokuGenerator {
                     remainingHoles--;
                 }
                 remainingSquares--;
-
             }
     }
-
     /**
      * Prints a representation of board on stdout
      */
@@ -172,19 +161,14 @@ public class SudokuGenerator {
 
         return print;
     }
-
-
     public static void main(String[] args) {
         SudokuGenerator sg = new SudokuGenerator();
         sg.nextBoard(35);
         sg.print();
     }
 
-
-    int[][] board;
+    int[][]     board;
     private int operations;
-
-
 }
 
 

@@ -1,4 +1,4 @@
-package com.example.cemdeniz.sudokuapp.SudokuTools;
+package com.example.cemdeniz.sudoku.SudokuTools;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.GridView;
 
-import com.example.cemdeniz.sudokuapp.R;
+import com.example.cemdeniz.sudoku.R;
 
 import java.util.ArrayList;
 
@@ -19,11 +19,10 @@ public class CompleteSudoku extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.complete_sudoku);
-        Intent intent = getIntent();
+
+        Intent intent      = getIntent();
         ArrayList complete = intent.getIntegerArrayListExtra("complete");
-        GridView gridView = (GridView) findViewById(R.id.CompleteSudokuGridView);
+        GridView gridView  = (GridView) findViewById(R.id.CompleteSudokuGridView);
         gridView.setAdapter(new SudokuAdapter(CompleteSudoku.this,complete));
-
-
     }
 }

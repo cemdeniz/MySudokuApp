@@ -1,4 +1,4 @@
-package com.example.cemdeniz.sudokuapp.SudokuDifficulties;
+package com.example.cemdeniz.sudoku.SudokuDifficulties;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.cemdeniz.sudokuapp.R;
-import com.example.cemdeniz.sudokuapp.SudokuTools.CompleteSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuTools.SudokuAdapter;
-import com.example.cemdeniz.sudokuapp.SudokuTools.SudokuGenerator;
+import com.example.cemdeniz.sudoku.R;
+import com.example.cemdeniz.sudoku.SudokuTools.CompleteSudoku;
+import com.example.cemdeniz.sudoku.SudokuTools.SudokuAdapter;
+import com.example.cemdeniz.sudoku.SudokuTools.SudokuGenerator;
 
 import java.util.ArrayList;
 
@@ -28,14 +28,16 @@ public class AdvancedSudoku extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sudoku_board);
 
+        final ArrayList<Integer> boardArrayList = new ArrayList<>();
+        final SudokuGenerator generator = new SudokuGenerator();
+        TextView tx    = (TextView) findViewById(R.id.sudokuView);
         Button checker = (Button) findViewById(R.id.checker);
         Button doneBtn = (Button) findViewById(R.id.doneBtn);
-        final ArrayList<Integer> boardArrayList = new ArrayList<>();
+
         boardArrayList.clear();
-        TextView tx = (TextView) findViewById(R.id.sudokuView);
         tx.setText(null);
         tx.setText("♣ Advanced Sudoku ♣");
-        final SudokuGenerator generator = new SudokuGenerator();
+
         int[][] test=  generator.nextBoard(42);
 
         for (int i = 0; i < 9; i++) {
@@ -52,26 +54,20 @@ public class AdvancedSudoku extends Activity{
             @Override
             public void onClick(View v) {
 
-
                 if ((boardArrayList).equals((generator.completeArrayList))) {
                     Toast.makeText(getApplicationContext(), "Congratulations. You finished it! :)", Toast.LENGTH_LONG).show();
-
                 }
-
                 else
                     Toast.makeText(getApplicationContext(),"It's not correct. Try again when you finished. You can do it !",Toast.LENGTH_LONG).show();
             }
         });
-
         doneBtn.setOnClickListener(new View.OnClickListener() {
-
-                                       @Override
-                                       public void onClick(View view) {
-                                           Intent i=new Intent(AdvancedSudoku.this, CompleteSudoku.class );
-                                           i.putExtra("complete",generator.completeArrayList);
-                                           startActivity(i);
-                                       }
-                                   }
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(AdvancedSudoku.this, CompleteSudoku.class );
+                i.putExtra("complete",generator.completeArrayList);
+                startActivity(i);
+            }}
         );
 
     }

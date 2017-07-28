@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cemdeniz.sudokuapp">
+    package="com.example.cemdeniz.sudoku">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SudokuMain.MainActivity">
+        <activity android:name="com.example.cemdeniz.sudoku.SudokuMain.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,17 +18,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SudokuDifficulties.BeginnerSudoku"
+            android:name="com.example.cemdeniz.sudoku.SudokuDifficulties.BeginnerSudoku"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".SudokuDifficulties.IntermediateSudoku"
+        <activity android:name="com.example.cemdeniz.sudoku.SudokuDifficulties.IntermediateSudoku"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".SudokuDifficulties.AdvancedSudoku"
+        <activity android:name="com.example.cemdeniz.sudoku.SudokuDifficulties.AdvancedSudoku"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".SudokuDifficulties.ExpertSudoku"
+        <activity android:name="com.example.cemdeniz.sudoku.SudokuDifficulties.ExpertSudoku"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".SudokuDifficulties.HardestSudoku"
+        <activity android:name="com.example.cemdeniz.sudoku.SudokuDifficulties.HardestSudoku"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".SudokuTools.CompleteSudoku"
+        <activity android:name="com.example.cemdeniz.sudoku.SudokuTools.CompleteSudoku"
             android:windowSoftInputMode="adjustPan"/>
 
 

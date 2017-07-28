@@ -1,4 +1,4 @@
-package com.example.cemdeniz.sudokuapp.SudokuDifficulties;
+package com.example.cemdeniz.sudoku.SudokuDifficulties;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.cemdeniz.sudokuapp.R;
-import com.example.cemdeniz.sudokuapp.SudokuTools.CompleteSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuTools.SudokuAdapter;
-import com.example.cemdeniz.sudokuapp.SudokuTools.SudokuGenerator;
+import com.example.cemdeniz.sudoku.R;
+import com.example.cemdeniz.sudoku.SudokuTools.CompleteSudoku;
+import com.example.cemdeniz.sudoku.SudokuTools.SudokuAdapter;
+import com.example.cemdeniz.sudoku.SudokuTools.SudokuGenerator;
 
 import java.util.ArrayList;
 
@@ -21,21 +21,23 @@ import java.util.ArrayList;
  * Created by cemdeniz on 20.07.2017.
  */
 
-public class ExpertSudoku extends Activity{
+public class IntermediateSudoku extends Activity{
+    ArrayList<Integer> boardArrayList = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sudoku_board);
 
+        TextView tx    = (TextView) findViewById(R.id.sudokuView);
         Button checker = (Button) findViewById(R.id.checker);
-        Button doneBtn= (Button) findViewById(R.id.doneBtn);
-        final ArrayList<Integer> boardArrayList = new ArrayList<>();
+        Button doneBtn = (Button) findViewById(R.id.doneBtn);
+
         boardArrayList.clear();
-        TextView tx = (TextView) findViewById(R.id.sudokuView);
         tx.setText(null);
-        tx.setText("♥ Expert Sudoku ♥");
+        tx.setText("♦  Intermediate Sudoku ♦");
+
         final SudokuGenerator generator = new SudokuGenerator();
-        int[][] test=  generator.nextBoard(50);
+        int[][] test   =  generator.nextBoard(32);
 
         for (int i = 0; i < 9; i++) {
             int j;
@@ -43,13 +45,11 @@ public class ExpertSudoku extends Activity{
                 boardArrayList.add(test[i][j]);
             }
         }
-        GridView gridView = (GridView) findViewById(R.id.SudokuGridView);
-        gridView.setAdapter(new SudokuAdapter(ExpertSudoku.this,boardArrayList));
-
+        GridView gridView     = (GridView) findViewById(R.id.SudokuGridView);
+        gridView.setAdapter(new SudokuAdapter(IntermediateSudoku.this,boardArrayList));
         checker.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
 
                 if ((boardArrayList).equals((generator.completeArrayList)))
                     Toast.makeText(getApplicationContext(),"Congratulations. You finished it! :)",Toast.LENGTH_LONG).show();
@@ -57,17 +57,15 @@ public class ExpertSudoku extends Activity{
                     Toast.makeText(getApplicationContext(),"It's not correct. Try again when you finished. You can do it !",Toast.LENGTH_LONG).show();
             }
         });
-
         doneBtn.setOnClickListener(new View.OnClickListener() {
 
-                                       @Override
-                                       public void onClick(View view) {
-                                           Intent i=new Intent(ExpertSudoku.this, CompleteSudoku.class );
-                                           i.putExtra("complete",generator.completeArrayList);
-                                           startActivity(i);
-                                       }
-                                   }
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(IntermediateSudoku.this, CompleteSudoku.class );
+                i.putExtra("complete",generator.completeArrayList);
+                startActivity(i);
+            }
+         }
         );
-
     }
 }

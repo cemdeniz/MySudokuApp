@@ -1,4 +1,4 @@
-package com.example.cemdeniz.sudokuapp.SudokuDifficulties;
+package com.example.cemdeniz.sudoku.SudokuDifficulties;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.example.cemdeniz.sudokuapp.R;
-import com.example.cemdeniz.sudokuapp.SudokuTools.CompleteSudoku;
-import com.example.cemdeniz.sudokuapp.SudokuTools.SudokuAdapter;
+import com.example.cemdeniz.sudoku.R;
+import com.example.cemdeniz.sudoku.SudokuTools.CompleteSudoku;
+import com.example.cemdeniz.sudoku.SudokuTools.SudokuAdapter;
 
 import java.util.ArrayList;
 
@@ -29,11 +29,9 @@ public class HardestSudoku extends Activity {
         setContentView(R.layout.hardest_sudoku);
 
         Button hardestChecker = (Button) findViewById(R.id.hardestChecker);
-        Button doneBtn = (Button) findViewById(R.id.doneBtn);
-
+        Button doneBtn        = (Button) findViewById(R.id.doneBtn);
 
         //World's hardest sudoku view.
-
         hardestArrayList.add(8);
         hardestArrayList.add(0);
         hardestArrayList.add(0);
@@ -118,7 +116,6 @@ public class HardestSudoku extends Activity {
 
 
         // World's hardest sudoku answer.
-
         hardestArrayListAnswer.add(8);
         hardestArrayListAnswer.add(1);
         hardestArrayListAnswer.add(2);
@@ -201,8 +198,7 @@ public class HardestSudoku extends Activity {
         hardestArrayListAnswer.add(5);
         hardestArrayListAnswer.add(2);
 
-
-        GridView gridView = (GridView) findViewById(R.id.hardestGridView);
+        GridView gridView  = (GridView) findViewById(R.id.hardestGridView);
         gridView.setAdapter(new SudokuAdapter(HardestSudoku.this, hardestArrayList));
 
         hardestChecker.setOnClickListener(new View.OnClickListener() {
@@ -218,15 +214,13 @@ public class HardestSudoku extends Activity {
 
         doneBtn.setOnClickListener(new View.OnClickListener() {
 
-                                       @Override
-                                       public void onClick(View view) {
-                                           Intent i=new Intent(HardestSudoku.this, CompleteSudoku.class );
-                                           i.putExtra("complete",hardestArrayListAnswer);
-                                           startActivity(i);
-                                       }
-                                   }
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(HardestSudoku.this, CompleteSudoku.class );
+                i.putExtra("complete",hardestArrayListAnswer);
+                startActivity(i);
+            }
+        }
         );
-
-
     }
 }
